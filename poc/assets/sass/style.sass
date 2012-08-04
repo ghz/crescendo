@@ -8,26 +8,21 @@
 //Dimensions
 $coverSize: 150px
 $shift: 20px
-$playerMinWidth: 320px
-$progressBarHeight: 10px
+$progressBarHeight: 11px
 
 //Icon Fonts
 @font-face 
-	font-family: 'entypo'
-	src: url('../fonts/entypo.eot')
-	src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),  		url('../fonts/entypo.svg#entypo') format('svg'), 		url('../fonts/entypo.woff') format('woff'), 		url('../fonts/entypo.ttf') format('truetype')
+	font-family: 'CrescendoIcons'
+	src: url('../fonts/CrescendoIcons.eot')
+	src: url('../fonts/CrescendoIcons.eot?#iefix') format('embedded-opentype'),  		url('../fonts/CrescendoIcons.svg#CrescendoIcons') format('svg'), 		url('../fonts/CrescendoIcons.woff') format('woff'), 		url('../fonts/CrescendoIcons.ttf') format('truetype')
 	font-weight: normal
 	font-style: normal
 
 
 [data-icon]:before
-	font-family: 'entypo'
+	font-family: 'CrescendoIcons'
 	content: attr(data-icon)
 	speak: none
-
-//Mixins
-@mixin circle
-	+border-radius(50%)
 
 //Style
 body
@@ -49,7 +44,6 @@ a
 
 #player
 	height: $coverSize
-	min-width: $playerMinWidth
 	width: 100%
 
 //Cover
@@ -100,8 +94,13 @@ a
 
 		&.activated
 			color:  #C6F748
+
 li#btn-repeat
+	margin-left: 3px
+
+li#btn-volume
 	float: right
+
 
 //Progress bar
 #progress, #cursor
@@ -127,9 +126,14 @@ li#btn-repeat
 
 #handle
 	top: -8px
-	left: 29%
+	left: 28%
 
 #time
 	font-size: 13px
 	margin-top: 5px
+
+#total-time
+	float: left
+
+#time-remaining
 	float: right

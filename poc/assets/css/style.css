@@ -55,15 +55,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 @font-face {
-  font-family: "entypo";
-  src: url("../fonts/entypo.eot");
-  src: url("../fonts/entypo.eot?#iefix") format("embedded-opentype"), url("../fonts/entypo.svg#entypo") format("svg"), url("../fonts/entypo.woff") format("woff"), url("../fonts/entypo.ttf") format("truetype");
+  font-family: "CrescendoIcons";
+  src: url("../fonts/CrescendoIcons.eot");
+  src: url("../fonts/CrescendoIcons.eot?#iefix") format("embedded-opentype"), url("../fonts/CrescendoIcons.svg#CrescendoIcons") format("svg"), url("../fonts/CrescendoIcons.woff") format("woff"), url("../fonts/CrescendoIcons.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 [data-icon]:before {
-  font-family: "entypo";
+  font-family: "CrescendoIcons";
   content: attr(data-icon);
   speak: none;
 }
@@ -86,7 +86,6 @@ a {
 
 #player {
   height: 150px;
-  min-width: 320px;
   width: 100%;
 }
 
@@ -151,6 +150,10 @@ a {
 }
 
 li#btn-repeat {
+  margin-left: 3px;
+}
+
+li#btn-volume {
   float: right;
 }
 
@@ -159,7 +162,7 @@ li#btn-repeat {
 }
 
 #progress {
-  height: 10px;
+  height: 11px;
   margin-top: 2px;
   background: black;
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, #0c0c0c 0 1px 4px inset;
@@ -173,7 +176,7 @@ li#btn-repeat {
 }
 
 #cursor {
-  height: 8px;
+  height: 9px;
   width: 30%;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c6f748), color-stop(100%, #a7bf69));
   background-image: -webkit-linear-gradient(top, #c6f748, #a7bf69);
@@ -187,11 +190,18 @@ li#btn-repeat {
 
 #handle {
   top: -8px;
-  left: 29%;
+  left: 28%;
 }
 
 #time {
   font-size: 13px;
   margin-top: 5px;
+}
+
+#total-time {
+  float: left;
+}
+
+#time-remaining {
   float: right;
 }
