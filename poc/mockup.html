@@ -12,31 +12,52 @@
             <img id="cover" src="http://lorempixel.com/150/150/" alt="Lorem ipsum dolor sit amet" />
 
             <div id="content">
-                    <div id="infos">
-                        <h1 id="title">Lorem ipsum dolor sit amet</h1>
-                        <p id="desc">Ut enim ad <span id="artist"></span> - <span id="album">Duis aute irure</span> <span id="source">on <a href="#">Jamendo</a></span> </p>
+                <div id="infos">
+                    <h1 id="title">Lorem ipsum dolor sit amet</h1>
+                    <p id="desc"><span id="artist"></span> - <span id="album"></span>, <span id="source">on <a href="#">Jamendo</a></span> </p>
+                </div>
+
+                <div id="controls">
+                    <ul id="buttons">
+                        <li id="btn-play">
+                            <div aria-hidden="true" data-icon="&#x25;"></div>
+                        </li>
+                        <li id="btn-stop">
+                            <div aria-hidden="true" data-icon="&#x2a;"></div>
+                        </li>
+                        <li id="btn-repeat" class="activated">
+                            <div aria-hidden="true" data-icon="&#x27;"></div>
+                        </li>
+                    </ul>
+                    <div id="progress">
+                        <div id="cursor"></div>
+                        <img src="assets/img/handle.png" id="handle" />
                     </div>
-	                    <div id="controls">
-	                        <ul id="buttons">
-	                            <li id="btn-play">
-	                            	<div aria-hidden="true" data-icon="&#x25;"></div>
-	                            </li>
-	                            <li id="btn-stop">
-                            		<div aria-hidden="true" data-icon="&#x2a;"></div>
-	                            </li>
-	                            <li id="btn-repeat" class="activated">
-                            		<div aria-hidden="true" data-icon="&#x27;"></div>
-	                            </li>
-	                        </ul>
-	                        <div id="progress">
-	                            <div id="cursor"></div>
-	                            <img src="assets/img/handle.png" id="handle" />
-                        	</div>
-	                    	<div id="time">2:36</div>
-	                    </div>
-	                    
-                    </div>
-            </div>
+                    <div id="time">2:36</div>
+                </div>
+
+            </div><!-- content -->
+
         </div>
+
+        <script type="text/javascript">
+            (function(window, document){
+                var params = decodeURI(window.location.search.substring(1)).replace(/(^|&)[a-z]+=/g, '\n').split('\n');
+
+                var title = document.getElementById('title');
+                var artist = document.getElementById('artist');
+                var album = document.getElementById('album');
+                var cover = document.getElementById('cover');
+                var cursor = document.getElementById('cursor');
+
+                title.appendChild(document.createTextNode(params[1]));
+                artist.appendChild(document.createTextNode(params[2]));
+                album.appendChild(document.createTextNode(params[3]));
+                cover.src = params[4];
+                cover.alt = params[2] + ' - ' + params[3];
+                cursor.style.marginRight = params[5]+'%';
+
+            }(window, document));
+        </script>
     </body>
 </html>
