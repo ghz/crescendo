@@ -3,3 +3,9 @@
     height: 155px;
     margin: 30px auto;
 }
+
+#view-on-github {
+    padding: 12px 18px 12px 8px;
+    float: none;
+    width: 220px;
+}
