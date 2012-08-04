@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>crescendo</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="assets/js/crescendo.js"></script>
+    </head>
+    <body>
+
+        <div id="player">
+
+                <div id="cover">
+                </div>
+
+                <div id="content">
+                    <div id="inner">
+
+                        <div id="infos">
+                            <h1 id="title"></h1>
+                            <p id="desc"><span id="artist"></span> - <span id="album"></span></p>
+                        </div>
+
+                        <div id="controls">
+
+                            <ul id="buttons">
+                                <li id="btn-play" class="button"></li>
+                                <li id="btn-stop" class="button"></li>
+                                <li id="btn-rewind" class="button"></li>
+                            </ul>
+                            <div id="progress">
+                                <div id="cursor"></div>
+                            </div>
+
+                        </div>
+                        <div id="links"><a href="#">View on Jamendo</a></div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        <script type="text/javascript">
+            (function(window, document){
+                var params = decodeURI(window.location.search.substring(1)).replace(/(^|&)[a-z]+=/g, '\n').split('\n');
+
+                var title = document.getElementById('title');
+                var artist = document.getElementById('artist');
+                var album = document.getElementById('album');
+                var cover = document.getElementById('cover');
+                var cursor = document.getElementById('cursor');
+
+                title.appendChild(document.createTextNode(params[1]));
+                artist.appendChild(document.createTextNode(params[2]));
+                album.appendChild(document.createTextNode(params[3]));
+                cover.innerHTML = '<img src="' + params[4] + '" alt="' + params[2] + ' - ' + params[3] + '">';
+                cursor.style.marginRight = params[5]+'%';
+
+            }(window, document));
+        </script>
+
+    </body>
+</html>
