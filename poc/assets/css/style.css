@@ -59,7 +59,8 @@ table {
 #player {
   margin: auto;
   width: 390px;
-  height: 150px; }
+  height: 150px;
+  background-color: #eaeaea; }
 
 #cover, #content {
   height: 150px;
