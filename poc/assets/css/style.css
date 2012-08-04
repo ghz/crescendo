@@ -112,7 +112,7 @@ a {
   background-image: -moz-linear-gradient(top, #32363c, #17191e);
   background-image: -o-linear-gradient(top, #32363c, #17191e);
   background-image: linear-gradient(top, #32363c, #17191e);
-  padding: 20px;
+  padding: 16px 20px 20px 20px;
   overflow: hidden;
 }
 
@@ -120,16 +120,16 @@ a {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  line-height: 1.4em;
 }
 
 #desc {
   font-size: 15px;
-  margin-top: 7px;
   color: #919191;
 }
 
 #controls {
-  margin-top: 15px;
+  margin-top: 12px;
 }
 
 #buttons {

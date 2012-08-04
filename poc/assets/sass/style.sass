@@ -20,7 +20,7 @@ $progressBarHeight: 10px
 	font-style: normal
 
 
-[data-icon]:before 
+[data-icon]:before
 	font-family: 'entypo'
 	content: attr(data-icon)
 	speak: none
@@ -30,7 +30,7 @@ $progressBarHeight: 10px
 	+border-radius(50%)
 
 //Style
-body 
+body
 	font:
 		family: 'Ubuntu', sans-serif
 		weight: normal
@@ -41,10 +41,10 @@ body
 *
 	box-sizing: border-box
 
-a 
+a
 	color: inherit
 
-	&:hover, &:active, &:focus, &:visited, &:link 
+	&:hover, &:active, &:focus, &:visited, &:link
 	color: inherit
 
 #player
@@ -61,28 +61,28 @@ a
 	background: url('../img/jamendo-150-op0.3.png')
 	max-width: $coverSize
 
-@media screen and (max-width: 320px) 
+@media screen and (max-width: 320px)
 	#cover
 		display: none
 
 //Left Side
 #content
 	+background-image(linear-gradient(top, #32363C, #17191E))
-	padding: $shift
+	padding: ($shift - 4) $shift $shift $shift
 	overflow: hidden
 
 #title, #desc
 	overflow: hidden
 	white-space: nowrap
 	text-overflow: ellipsis
+	line-height: 1.4em
 
-#desc 
+#desc
 	font-size: 15px
-	margin-top: 7px
 	color: #919191
 
 #controls
-	margin-top: 15px
+	margin-top: 12px
 
 //Buttons
 #buttons
@@ -90,11 +90,11 @@ a
 	font-size: 22px
 	+clearfix()
 
-	li 
+	li
 		float: left
 		opacity: 0.6
 
-		&:hover 
+		&:hover
 			cursor: pointer
 			opacity: 1
 
@@ -104,10 +104,10 @@ li#btn-repeat
 	float: right
 
 //Progress bar
-#progress, #cursor 
+#progress, #cursor
 	border-radius: $coverSize / 2
 
-#progress 
+#progress
 	height: $progressBarHeight
 	margin-top: 2px
 	background: black
@@ -117,7 +117,7 @@ li#btn-repeat
 #cursor, #handle
 	position: absolute
 
-#cursor 
+#cursor
 	height: $progressBarHeight - 2px
 	width: 30%
 	+background-image(linear-gradient(top, #C6F748, #a7bf69))
@@ -129,7 +129,7 @@ li#btn-repeat
 	top: -8px
 	left: 29%
 
-#time 
+#time
 	font-size: 13px
 	margin-top: 5px
 	float: right
