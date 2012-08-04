@@ -128,10 +128,11 @@ a {
 }
 
 #controls {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 #buttons {
+  margin-bottom: 5px;
   list-style-type: none;
   font-size: 22px;
   overflow: hidden;

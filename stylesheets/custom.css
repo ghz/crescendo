@@ -1,9 +1,18 @@
 .poc {
+	display: block;
     width: 100%;
     height: 150px;
     margin: 30px auto;
     border-radius: 5px;
 	box-shadow: 0px 0px 8px black;
+}
+
+.poc.small {
+	width: 205px;
+}
+
+.poc.medium {
+	width: 400px;
 }
 
 #view-on-github {
