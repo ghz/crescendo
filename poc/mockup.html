@@ -9,13 +9,17 @@
     </head>
     <body>
         <div id="player">
-            <img id="cover" src="http://lorempixel.com/150/150/" alt="Lorem ipsum dolor sit amet" />
+            <img id="cover" src="assets/img/jamendo-150-op0.3.png" alt="crescendo" />
 
             <div id="content">
+
                 <div id="infos">
-                    <h1 id="title">Lorem ipsum dolor sit amet</h1>
-                    <p id="desc"><span id="artist"></span> - <span id="album"></span>, <span id="source">on <a href="#">Jamendo</a></span> </p>
-                </div>
+                    <h1 id="title"></h1>
+                    <p id="desc">
+                        <span id="artist"></span> - <span id="album"></span>,
+                        <span id="source">on <a href="#">Jamendo</a></span>
+                    </p>
+                </div><!-- infos -->
 
                 <div id="controls">
                     <ul id="buttons">
@@ -34,7 +38,7 @@
                         <img src="assets/img/handle.png" id="handle" />
                     </div>
                     <div id="time">2:36</div>
-                </div>
+                </div><!-- controls -->
 
             </div><!-- content -->
 
@@ -48,14 +52,14 @@
                 var artist = document.getElementById('artist');
                 var album = document.getElementById('album');
                 var cover = document.getElementById('cover');
-                var cursor = document.getElementById('cursor');
+                var handle = document.getElementById('handle');
 
                 title.appendChild(document.createTextNode(params[1]));
                 artist.appendChild(document.createTextNode(params[2]));
                 album.appendChild(document.createTextNode(params[3]));
                 cover.src = params[4];
                 cover.alt = params[2] + ' - ' + params[3];
-                cursor.style.marginRight = params[5]+'%';
+                //handle.style.right = params[5]+'%';
 
             }(window, document));
         </script>
