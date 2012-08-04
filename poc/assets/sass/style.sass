@@ -1,4 +1,135 @@
-//Reset CSS
+//Reset CSS & Compass mixins
+//---------------------------- 
+@import "compass/reset"
+@import "compass"
 
-.test
-	color: blue
+//crescendo CSS
+//---------------------------- 
+//Dimensions
+$coverSize: 150px
+$shift: 20px
+$playerMinWidth: 320px
+$progressBarHeight: 10px
+
+//Icon Fonts
+@font-face 
+	font-family: 'entypo'
+	src: url('../fonts/entypo.eot')
+	src: url('../fonts/entypo.eot?#iefix') format('embedded-opentype'),  		url('../fonts/entypo.svg#entypo') format('svg'), 		url('../fonts/entypo.woff') format('woff'), 		url('../fonts/entypo.ttf') format('truetype')
+	font-weight: normal
+	font-style: normal
+
+
+[data-icon]:before 
+	font-family: 'entypo'
+	content: attr(data-icon)
+	speak: none
+
+//Mixins
+@mixin circle
+	+border-radius(50%)
+
+//Style
+body 
+	font:
+		family: 'Ubuntu', sans-serif
+		weight: normal
+		size: 22px
+	color: white
+
+
+*
+	box-sizing: border-box
+
+a 
+	color: inherit
+
+	&:hover, &:active, &:focus, &:visited, &:link 
+	color: inherit
+
+#player
+	height: $coverSize
+	min-width: $playerMinWidth
+	width: 100%
+
+//Cover
+#cover, #content
+	height: $coverSize
+
+#cover
+	+float-left()
+	background: url('../img/jamendo-150-op0.3.png')
+	max-width: $coverSize
+
+@media screen and (max-width: 320px) 
+	#cover
+		display: none
+
+//Left Side
+#content
+	+background-image(linear-gradient(top, #32363C, #17191E))
+	padding: $shift
+	overflow: hidden
+
+#title, #desc
+	overflow: hidden
+	white-space: nowrap
+	text-overflow: ellipsis
+
+#desc 
+	font-size: 15px
+	margin-top: 7px
+	color: #919191
+
+#controls
+	margin-top: 15px
+
+//Buttons
+#buttons
+	list-style-type: none
+	font-size: 22px
+	+clearfix()
+
+	li 
+		float: left
+		opacity: 0.6
+
+		&:hover 
+			cursor: pointer
+			opacity: 1
+
+		&.activated
+			color:  #C6F748
+li#btn-repeat
+	float: right
+
+//Progress bar
+#progress, #cursor 
+	border-radius: $coverSize / 2
+
+#progress 
+	height: $progressBarHeight
+	margin-top: 2px
+	background: black
+	+box-shadow(rgba(255, 255, 255, 0.1) 0 1px 0, #0C0C0C 0 1px 4px inset)
+	position: relative
+
+#cursor, #handle
+	position: absolute
+
+#cursor 
+	height: $progressBarHeight - 2px
+	width: 30%
+	+background-image(linear-gradient(top, #C6F748, #a7bf69))
+	background-color: white
+	top: 1px
+	left: 1px
+
+#handle
+	top: -8px
+	left: 29%
+
+#time 
+	font-size: 13px
+	margin-top: 5px
+	float: right

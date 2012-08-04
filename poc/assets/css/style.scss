@@ -1,0 +1,154 @@
+/**
+ *
+ * SASS Stylsheet for crescendo.js
+ *
+ */
+
+/**
+ * RESET CSS
+ */
+@import "reset.scss";
+
+/**
+ * crescendo CSS
+ */
+
+// Dimensions
+$coverWidth: 150px;
+$contentWidth: round(1.6*$coverWidth);
+$playerWidth: $coverWidth + $contentWidth;
+$playerHeight: $coverWidth;
+$shift: 15px;
+$progressBarHeight: 15px;
+$buttonWidth: floor(($contentWidth - 2*$shift)/3);
+
+// Mixins
+@mixin main-div {
+  height: $coverWidth;
+  float: left;
+}
+
+@mixin shifted {
+  margin-left: $shift;
+}
+
+// Colors
+$progessBarColor: #d3d3d3;
+
+// main div
+#player {
+  margin: auto;
+  width: $playerWidth;
+  height: $playerHeight;
+  //display: table-row;
+  background-color: #eaeaea
+}
+
+// left side
+#cover, #content {
+  @include main-div;
+}
+
+#cover {
+  width: $coverWidth;
+  background: url('../img/jamendo-150-op0.3.png');
+}
+
+// right side
+
+#inner {
+  height: $playerHeight - 2;
+  border: 1px solid #d3d3d3;
+  border-left-width: 0;
+}
+
+#content {
+  width: $contentWidth;
+  font: {
+    family: 'Ubuntu', /*'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma,*/ sans-serif;
+    weight: normal;
+    size: 22px;
+  }
+  color: white;
+}
+
+#infos, #controls, #links {
+  @include shifted;
+}
+
+#infos {
+  margin-top: 12px;
+}
+
+#desc {
+  font-size: 0.6em;
+  font-style: italic;
+  margin-top: 7px;
+}
+
+// controls
+#controls {
+  margin: 22px $shift 13px $shift;
+}
+
+#progress, #cursor {
+  height: $progressBarHeight;
+}
+
+#progress {
+  border-radius: 2px;
+  background-color: $progessBarColor;
+  margin-top: 2px;
+}
+
+#cursor {
+  margin-right: 30%;
+  background-color: darken($progessBarColor, 10%);
+}
+
+#buttons {
+  display: table-row;
+  list-style-type: none;
+
+  & .button {
+    display: table-cell;
+    height: 15px;
+    //width: $buttonWidth;
+    width: 25px;
+    text-align: center;
+    opacity: 0.6;
+    background: {
+      image: url('../img/buttons-15.png');
+      repeat: no-repeat;
+    }
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+
+  #btn-play {
+    background-position: left top;
+  }
+
+  #btn-stop {
+    background-position: left -30px;
+  }
+
+  #btn-rewind {
+    background-position: left bottom;
+  }
+}
+
+#links {
+  font-size: 10px;
+  color: black;
+  & a {
+    color: inherit;
+
+    &:hover, &:active, &:focus, &:visited, &:link {
+      color: inherit;
+    }
+  }
+}

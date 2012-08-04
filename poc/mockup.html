@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>crescendo</title>
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="assets/js/crescendo.js"></script>
+    </head>
+    <body>
+        <div id="player">
+            <img id="cover" src="http://lorempixel.com/150/150/" alt="Lorem ipsum dolor sit amet" />
+
+            <div id="content">
+                    <div id="infos">
+                        <h1 id="title">Lorem ipsum dolor sit amet</h1>
+                        <p id="desc">Ut enim ad <span id="artist"></span> - <span id="album">Duis aute irure</span> <span id="source">on <a href="#">Jamendo</a></span> </p>
+                    </div>
+	                    <div id="controls">
+	                        <ul id="buttons">
+	                            <li id="btn-play">
+	                            	<div aria-hidden="true" data-icon="&#x25;"></div>
+	                            </li>
+	                            <li id="btn-stop">
+                            		<div aria-hidden="true" data-icon="&#x2a;"></div>
+	                            </li>
+	                            <li id="btn-repeat" class="activated">
+                            		<div aria-hidden="true" data-icon="&#x27;"></div>
+	                            </li>
+	                        </ul>
+	                        <div id="progress">
+	                            <div id="cursor"></div>
+	                            <img src="assets/img/handle.png" id="handle" />
+                        	</div>
+	                    	<div id="time">2:36</div>
+	                    </div>
+	                    
+                    </div>
+            </div>
+        </div>
+    </body>
+</html>
